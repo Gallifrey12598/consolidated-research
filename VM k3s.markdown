@@ -12,7 +12,7 @@
 	
 #Install Docker using Yum. For this I just used docker and not docker-ce docker-ce-cli containerd.io or docker-compose-plugin.
 
-# I have not attempted it with thoes so attempt at your own risk. Commands are *_*
+# I have not attempted it with thoes so attempt at your own risk. Commands are *_*  
 
 	$yum install docker -y       ---> This is the command I used
 
@@ -39,6 +39,7 @@
 	$curl -sfL https://get.k3s.io | sh -        ***SEE BELOW NOTE FOR ADDITIONAL INSTALL INFORMATION***
 
 #Once finished installing, I confirmed it installed corectly with the following command
+
 	$kubectl get node     ***SEE NOTE BELOW***
 	
 	#I was having issues running kubectl. I kept getting
@@ -53,10 +54,12 @@
 	
 	
 #I saw the following confirming proper installation
+
 	NAME                       STATUS      ROLES                    AGE       VERSION
 	localhost.localdomain      Ready       control-plane, master    [time]    v1.23.6+k3s1
 	
 #I applied a test deployment example to make sure things are working as intended
+
 	$kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml
 	
 	*feedback* deployment.apps/nginx-deployment created
